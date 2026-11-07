@@ -23,15 +23,18 @@ cargo install --git https://github.com/ggrothendieck/pdf-toolkit
 To get help run `pdf-toolkit --help` to list all commands or 
 `pdf-toolkit merge --help`, etc.  to get help on particular commands.
 
-In each case <INPUTS>... can be a space separated list of files, @filelist (where the
-indicated file names one input file per line; blank lines and lines beginning with #
-are ignored) or directories in which case all relevant files in the directory are used.
+In each case `<INPUTS>...` can be a space separated list of files or a
+directory in which case all relevant files in the directory are used or it can
+be of the form @filelist where the filelist is a file that contains the names
+of the files to use, one per line and blank lines and lines starting with # are
+ignored.  
 
-```
-Command: html2pf
-Description: Convert multiple HTML file(s), directories, or @file lists to PDF
-Usage: pdf-toolkit html2pdf [OPTIONS] <INPUTS>...
-Options:
+``` 
+Command: html2pf 
+Description: Convert multiple HTML file(s),
+directories, or @file lists to PDF
+Usage: pdf-toolkit html2pdf [OPTIONS] <INPUTS>...  
+Options: 
    --outdir <OUTDIR> Target output directory for generated PDFs (defaults to '.')
 
 Command: merge
