@@ -97,7 +97,7 @@ flag can be used on the `attach-*` commands to disable sanitization by
 `pdf-toolkit` in which case all attachments will be used, not just those that
 infer passes.
 
-## Interals
+## Internals
 
 The following crates are used: Clap, anyhow, base64, infer, ironpress, lopdf,
 pdf_oxide.
