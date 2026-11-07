@@ -97,7 +97,7 @@ associated with.
 For example, in the case of emails if the emails are to be merged into a single
 PDF then page level attachments would be needed so that the attachments are
 associated with the email they are attached to.  On the other hand if each
-email is a separate PDF the either document level or page level attachments can
+email is a separate PDF then either document level or page level attachments can
 be used.
 
 The advantage of document level attachments is that most PDF viewers support
@@ -105,7 +105,7 @@ them; however, they cannot be used to associate attachments to particular
 pages.
 
 PDF Viewers.  Some open source PDF viewers that support both page and document
-level attachments are [Okular 26.11.70](https://github.com/KDE/okular] (cross
+level attachments are [Okular 26.11.70](https://github.com/KDE/okular) (cross
 platform) and [SumatraPDF 3.7
 prerelease](https://github.com/sumatrapdfreader/sumatrapdf) (Windows only).
 
@@ -114,10 +114,11 @@ viruses.  Attachments which are files on your system may have been scanned by
 software that comes with your operating system or that you installed.  In
 addition `pdf-toolkit` will reject certain attachments that are more likely to
 contain code using the rust `infer` crate.  However, these measures are not
-foolproof so simply do not add attachments if in doubt.  The `--no-sanitize`
-flag can be used on the `attach-*` commands to disable sanitization by
-`pdf-toolkit` in which case all attachments will be used, not just those that
-infer passes.
+foolproof so simply do not add attachments if in doubt.  
+
+If you trust all attachments then the `--no-sanitize` flag can be used on the
+`attach-*` commands to disable sanitization by `pdf-toolkit`. In that case all
+attachments will be used, not just those that the infer crate passes.
 
 ## Internals
 
