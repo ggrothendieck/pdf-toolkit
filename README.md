@@ -64,6 +64,25 @@ Options:
    --outdir <OUTDIR> Target output directory (defaults to '.' for in-place modification)
 ```
 
+## Example
+
+This example uses `mboxshell` to convert an mbox file to separate HTML files
+into `outdir`.  Separately we extract the attachments and each is placed in
+a directory in outdir hvae the same name but without extension as the
+corresponding email file name.
+
+Next we use `pdf-toolkit` to convert the HTML files to PDF, add the attachments
+and merge them into a single PDF.
+
+```
+mboxshell export -f html --dirname seq-no --output outdir emails.mbox
+mboxshell attachments --dirname seq-no --output outdir emails.mbox
+cd outdir
+pdf-toolkit html2pdf .
+pdf-toolkit attach-to-pdf . --level page
+pdf-toolkit merge . -o combined.pdf
+```
+
 ## Attachments
 
 Document vs. Page Level. The PDF format supports document level and page level
