@@ -68,8 +68,8 @@ Options:
 
 This example uses `mboxshell` to convert an mbox file to separate HTML files
 into `outdir`.  Separately we extract the attachments and each is placed in
-a directory in outdir hvae the same name but without extension as the
-corresponding email file name.
+a directory in outdir having the same name as the associated file except 
+without the extension.
 
 Next we use `pdf-toolkit` to convert the HTML files to PDF, add the attachments
 and merge them into a single PDF.
